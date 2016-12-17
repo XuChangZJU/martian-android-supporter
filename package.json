@@ -1,8 +1,7 @@
 {
   "name": "martian-ble-supporter",
   "version": "1.0.0",
-  "description": "ble 4.0 for react-native",
-  "main": "src/index.js",
+  "description": "ble native supporter for martian apps",
   "files": [
     "android/*"
   ],
