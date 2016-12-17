@@ -1,0 +1,38 @@
+{
+  "name": "ble-native",
+  "version": "1.1.0",
+  "description": "ble 4.0 for react-native",
+  "main": "src/index.js",
+  "files": [
+    "src/*",
+    "android/*",
+    "ios/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Xu Chang",
+    "email": "chinawraith@163.com",
+    "url": "https://github.com/XuChangZJU/"
+  },
+  "contributors": [
+    {
+      "name": "Bi Li yuan",
+      "url": "https://github.com/Babyliyuan/"
+    }
+  ],
+  "homepage": "https://github.com/XuChangZJU/bleNative",
+  "keywords": [
+    "react native",
+    "ble"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XuChangZJU/bleNative"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "events": "^1.0.2"
+  }
+}
