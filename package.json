@@ -22,9 +22,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/XuChangZJU/martian-ble-supporter"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "events": "^1.0.2"
   }
 }
