@@ -21,17 +21,6 @@ buildscript {
     }
 }
 
-allprojects {
-    repositories {
-        mavenLocal()
-        jcenter()
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$projectDir/../../node_modules/react-native/android"
-        }
-    }
-}
-
 apply plugin: 'com.android.library'
 
 android {
@@ -39,7 +28,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 22
         versionCode 1
         // get version name from package.json version
@@ -55,5 +44,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:0.20.+'
+    compile 'com.facebook.react:react-native:0.20+'
+    compile 'com.google.code.gson:gson:2.8.+'
 }

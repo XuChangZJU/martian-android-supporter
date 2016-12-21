@@ -1,21 +1,14 @@
 package com.martianLife.bleSupporter;
 
 import android.annotation.TargetApi;
-import android.bluetooth.*;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.util.Log;
 import com.facebook.react.bridge.*;
-import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.martianLife.domain.Key;
+import com.martianLife.domain.Lock;
+import com.martianLife.domain.Token;
 
-import javax.annotation.Nullable;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -26,4 +19,33 @@ public class BleSupporter extends ReactContextBaseJavaModule {
 
     private static final String TAG = BleSupporter.class.getSimpleName();
 
+    public BleSupporter(ReactApplicationContext reactContext) {
+        super(reactContext);
+    }
+
+    @Override
+    public String getName() {
+        return "BleSupporter";
+    }
+
+    @ReactMethod
+    public void startListener(ReadableMap params) {
+        Intent intent = new Intent(getReactApplicationContext(), MartianBgService.class);
+        String autoConnectKeys = params.getString("autoConnectKeys");
+        String token = params.getString("token");
+        String clientInfo = params.getString("clientInfo");
+
+        intent.putExtra(MartianBgService.EXTRA_AUTO_CONNECT_KEYS, autoConnectKeys);
+        intent.putExtra(MartianBgService.EXTRA_CLIENT_INFO, clientInfo);
+        intent.putExtra(MartianBgService.EXTRA_TOKEN, token);
+
+        getReactApplicationContext().startService(intent);
+    }
+
+
+    @ReactMethod
+    public void stopListener() {
+        Intent intent = new Intent(getCurrentActivity(), MartianBgService.class);
+        getReactApplicationContext().stopService(intent);
+    }
 }
