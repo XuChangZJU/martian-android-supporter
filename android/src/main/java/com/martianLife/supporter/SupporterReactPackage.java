@@ -1,4 +1,4 @@
-package com.martianLife.bleSupporter;
+package com.martianLife.supporter;
 
 /**
  * Created by Administrator on 2016/2/29.
@@ -10,7 +10,6 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,12 +17,12 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/2/29.
  */
-public class BleSupporterReactPackage implements ReactPackage {
+public class SupporterReactPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
         List<NativeModule> list = new ArrayList<>(1);
-        list.add(new BleSupporter(reactApplicationContext));
+        list.add(new Supporter(reactApplicationContext));
         return list;
     }
 
